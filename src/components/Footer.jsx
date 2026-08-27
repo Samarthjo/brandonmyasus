@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-borderLight bg-bgLight py-8">
       <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-start md:items-center gap-3 justify-between text-xs text-textSecondary">
-        <div>© {new Date().getFullYear()} brandonmyasus.in · Not affiliated with ASUS.</div>
+        <div>© {new Date().getFullYear()} brandmyasus.in · Not affiliated with ASUS.</div>
         <div className="flex gap-4">
           <a
             href="https://x.com/SamarthJoshiSJ"

@@ -32,7 +32,7 @@ function LoginGate({ onLoggedIn }) {
   return (
     <div className="min-h-screen bg-bgLight flex items-center justify-center px-6">
       <form onSubmit={submit} className="w-full max-w-sm bg-surfaceLight rounded-2xl border border-borderLight p-8 shadow-sm">
-        <div className="text-xs uppercase tracking-widest text-textSecondary font-mono mb-2">brandonmyasus.in</div>
+        <div className="text-xs uppercase tracking-widest text-textSecondary font-mono mb-2">brandmyasus.in</div>
         <h1 className="text-2xl font-bold mb-6">Admin login</h1>
         <label className="block mb-4">
           <div className="text-sm font-semibold mb-1.5">Email</div>
@@ -199,7 +199,7 @@ export default function Admin() {
       <header className="border-b border-borderLight bg-surfaceLight sticky top-0 z-10">
         <div className="max-w-[900px] mx-auto px-6 h-16 flex items-center justify-between">
           <div>
-            <div className="text-xs uppercase tracking-widest text-textSecondary font-mono">brandonmyasus.in</div>
+            <div className="text-xs uppercase tracking-widest text-textSecondary font-mono">brandmyasus.in</div>
             <div className="font-bold">Bid admin</div>
           </div>
           <div className="flex items-center gap-3">
