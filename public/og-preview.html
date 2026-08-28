@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>OG Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #f7f7f7;
+      font-family: Inter, -apple-system, sans-serif;
+      display: flex;
+      overflow: hidden;
+    }
+    .left {
+      flex: 1.15;
+      padding: 60px 50px 50px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      width: fit-content;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    h1 {
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: #111;
+    }
+    .subtitle {
+      font-size: 21px;
+      line-height: 1.35;
+      color: #4a4a4a;
+      max-width: 460px;
+    }
+    .stats {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .stat-num { font-size: 26px; font-weight: 800; color: #111; }
+    .stat-num.green { color: #22c55e; }
+    .stat-lbl { font-size: 13px; color: #6b7280; margin-top: 2px; }
+    .divider { width: 1px; height: 36px; background: #e5e7eb; }
+    .url {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin-top: 4px;
+    }
+    .url .accent { color: #2563eb; }
+
+    .right {
+      flex: 1;
+      padding: 40px 50px 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .grid-frame {
+      width: 100%;
+      max-width: 480px;
+      background: linear-gradient(180deg, #eef0f3, #dfe2e7);
+      padding: 16px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(30,40,60,0.14);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .cell {
+      aspect-ratio: 1;
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 1px 2px rgba(20,30,50,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 6px 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .cell.open { border: 1px dashed rgba(107,114,128,0.35); }
+    .brand-tile {
+      flex: 1;
+      width: 78%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+    .price {
+      font-size: 9px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .open-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: rgba(107,114,128,0.7);
+    }
+    .badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 14px;
+      height: 14px;
+      background: rgba(37,99,235,0.15);
+      color: #2563eb;
+      border-radius: 4px;
+      font-size: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Brand marks */
+    .b-emergent { background: #0b0b0b; color: white; font-family: Georgia, serif; font-style: italic; font-weight: 900; font-size: 32px; height: 100%; }
+    .b-sarvam { background: linear-gradient(135deg, #7c6fe8, #c96fb0, #f0a95c); color: white; font-family: Georgia, serif; font-style: italic; font-size: 15px; height: 100%; }
+    .b-firstclub { background: #0f4a35; color: #f4e9d4; font-family: Georgia, serif; font-weight: 900; font-size: 13px; line-height: 0.95; letter-spacing: -0.02em; text-align: center; height: 100%; flex-direction: column; }
+    .b-swish { background: #22c55e; color: white; font-weight: 900; font-style: italic; font-size: 15px; height: 100%; }
+    .b-dodo { background: #c6f24e; height: 100%; border-radius: 50% !important; }
+
+    .tuf-center {
+      background: linear-gradient(135deg, white, #eef0f3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px;
+    }
+    .tuf-svg { width: 70%; height: auto; }
+    .tuf-lbl { font-size: 8px; font-weight: 700; letter-spacing: 0.28em; color: rgba(107,114,128,0.7); }
+  </style>
+</head>
+<body>
+  <div class="left">
+    <div class="pill">🔊 Fans included. Attention guaranteed.</div>
+    <h1>Your brand,<br/>on my ASUS.</h1>
+    <p class="subtitle">7 sticker spots on the back of my ASUS TUF Gaming F15. Live auction. Min bid ₹800.</p>
+    <div class="stats">
+      <div>
+        <div class="stat-num green">₹0</div>
+        <div class="stat-lbl">of ₹1,80,000</div>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <div class="stat-num">7</div>
+        <div class="stat-lbl">sticker slots</div>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <div class="stat-num">6mo</div>
+        <div class="stat-lbl">minimum</div>
+      </div>
+    </div>
+    <div class="url">brandmyasus<span class="accent">.in</span></div>
+  </div>
+
+  <div class="right">
+    <div class="grid-frame">
+      <div class="grid">
+        <div class="cell"><div class="badge">⧗</div><div class="brand-tile"><div class="b-emergent" style="width:100%;display:flex;align-items:center;justify-content:center;">e</div></div><div class="price">₹2,600</div></div>
+        <div class="cell"><div class="badge">⧗</div><div class="brand-tile"><div class="b-sarvam" style="width:100%;display:flex;align-items:center;justify-content:center;">sarvam</div></div><div class="price">₹1,800</div></div>
+        <div class="cell open"><div class="brand-tile"><div class="open-lbl">OPEN</div></div><div class="price">from ₹800</div></div>
+
+        <div class="cell open"><div class="brand-tile"><div class="open-lbl">OPEN</div></div><div class="price">from ₹800</div></div>
+        <div class="cell tuf-center">
+          <svg class="tuf-svg" viewBox="-200 -100 400 240" preserveAspectRatio="xMidYMid meet">
+            <path d="M -180 -30 L -110 -30 L -70 -74 L -70 -18 L -102 -18 L -60 26 Q -32 56 0 46 Q 32 56 60 26 L 102 -18 L 70 -18 L 70 -74 L 110 -30 L 180 -30 L 122 30 L 96 46 Q 50 108 0 108 Q -50 108 -96 46 L -122 30 Z" fill="#161a20" />
+          </svg>
+          <div class="tuf-lbl">ASUS · TUF</div>
+        </div>
+        <div class="cell"><div class="badge">⧗</div><div class="brand-tile"><div class="b-firstclub" style="width:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;"><span>FIRST</span><span>CLUB</span></div></div><div class="price">₹2,000</div></div>
+
+        <div class="cell"><div class="badge">⧗</div><div class="brand-tile"><div class="b-dodo" style="width:65%;height:65%;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 60 52" style="width:60%;height:60%;"><g fill="#0a0a0a"><ellipse cx="24" cy="26" rx="17" ry="19"/><path d="M9 20 L3 12 L12 16 Z"/><path d="M40 22 Q56 24 58 32 Q55 34 48 32 Q42 30 40 28 Z"/><circle cx="30" cy="20" r="2.6" fill="#c6f24e"/></g></svg></div></div><div class="price">₹1,400</div></div>
+        <div class="cell"><div class="badge">⧗</div><div class="brand-tile"><div class="b-swish" style="width:100%;display:flex;align-items:center;justify-content:center;gap:3px;"><span style="font-size:12px;">✦</span><span>swish</span></div></div><div class="price">₹1,200</div></div>
+        <div class="cell open" style="background:rgba(255,255,255,0.4);"><div class="brand-tile"><div class="open-lbl" style="opacity:0.5;">BULK</div></div><div class="price" style="opacity:0.5;">email me</div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
