@@ -3,7 +3,12 @@ export default function AboutSamarth() {
     <section className="max-w-[1200px] mx-auto px-6 pb-12">
       <div className="bg-surfaceLight rounded-3xl border border-borderLight p-8 md:p-10 shadow-sm">
         <div className="flex items-start gap-5">
-          <div className="w-10 h-16 rounded-full bg-gradient-to-b from-textSecondary/30 to-textSecondary/50 shrink-0 mt-1" />
+          <img
+            src="/samarth.webp"
+            alt="Samarth Joshi"
+            className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover shrink-0 border border-borderLight shadow-sm"
+            draggable={false}
+          />
           <div className="flex-1">
             <h3 className="font-bold text-lg mb-2">Hey, I'm Samarth.</h3>
             <p className="text-textSecondary leading-relaxed max-w-3xl">
